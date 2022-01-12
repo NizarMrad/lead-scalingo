@@ -1,0 +1,23 @@
+<div>this is a page </div>
+<div class="text-gray-900 text-center test-4xl ">Les pages que vous avez créez</div>
+
+<table>
+<tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.name %></td>
+       
+        <td><%= link_to 'Voir la page', contentweb_page_path(@contentweb, page), class: 'text-2xl text-gray-900' %></td>
+        <td><%= link_to 'Editer', edit_contentweb_page_path(@contentweb, page),class: 'text-2xl text-gray-900' %></td>
+        <td><%= link_to 'Effacer', contentweb_page_path(@contentweb, page), method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-2xl text-gray-900' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h1 class="text-center font-bold text-4xl text-gray-900 ">Créez une nouvelle page </h1>
+<%=@pages.count%>
+<% if @pages.count >= 5 %>
+<div class="text-center text-gray-900 text-xl">Vous avez atteint le nombre maximum de pages</div>
+<% else %>
+<%= link_to 'Nouvelle Page', new_contentweb_page_path(@contentweb), class: 'text-2xl text-gray-900' %>
+<% end %>

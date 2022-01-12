@@ -1,0 +1,60 @@
+
+
+
+
+<div class=" w-full h-96 ">
+
+          
+
+
+          <div class="bg-gradient-to-r animate-pulse duration-500  from-purple-400 via-pink-500 to-red-500 w-full h-96" style="clip-path: circle(80% at 15% 4%)">
+          </div>
+          <div class="absolute  top-32">
+                  <%if current_user%>
+                      <h1 class="text-3xl bg-blue-500 text-white text-center py-2 px-4 font-bold  ">Welcome <%= current_user.email%></h1>
+                  <%else%>
+                      <h1 class="  pl-4 pr-20 py-4 text-4xl text-left z-20 font-extrabold text-gray-800 mb-10">Votre plateforme d'acquisition de <br>prospect ! </h1>
+                      <div class="flex">
+                          <a href='https://buy.stripe.com/test_dR65m37kd5uK0DK289' class="bg-yellow-400 ml-5  rounded-lg font-extrabold text-xl px-4 py-2 text-gray-100">Commencer </a>
+                          <button class="border-2 bg-yellow-100 border-yellow-400 ml-5 mr-10 rounded-lg font-extrabold text-lg px-4 py-2 text-gray-400">Plus de détails</button>
+                      
+                      </div>
+                   <%end%>
+
+           </div>
+         
+</div>
+
+<div class="my-5 ml-28"><%= image_tag "Network _Isometric.svg", height: 200 %></div>
+<%= link_to 'Dashboard', dashboard_path, class: " text-center text-5xl bg-red-500 text-gray-50 font-bold" %>
+
+
+<%# First Part explanation of who we are%>
+<section class=" mb-20  py-4">
+<div class="px-10">
+   <h2 class="  text-4xl text-left z-20 font-extrabold text-gray-800 mb-10">Une phrase forte qui définit notre produit, un truc qui tape !</h2>
+
+   
+   <p class="text-xl text-gray-600 ">
+      Un paragraphe qui décrit ce que nous sommes avec des mots clès très pertinenents. Chaque phrases qui décrit une partie de <a href ="#" class="text-pink-700" >notre produit est un lien.</a><br>
+      Et faire becuoup de ce genre de phrase avec à <a href ="#" class="text-pink-700" >chaque fois des liens </a>
+   </p >
+   <p class= "text-xl text-gray-600 mb-16">
+       Un paragraphe qui décrit ce que nous sommes avec des mots clès très pertinenents. Chaque phrases qui décrit une partie de <a href ="#" class="text-pink-700" >notre produit est un lien.</a><br>
+      Et faire becuoup de ce genre de phrase avec à <a href ="#" class="text-pink-700" >chaque fois des liens </a>
+      
+   </p>
+   <a href="#" class="bg-pink-400 py-2 px-4 rounded-lg  text-gray-100 font-semibold">Connaitre les détails de notre manière de proceder </a>
+</div>
+
+  
+
+</section>
+
+
+<%=render "contact" %>
+Nizar Christian M'rad
+
+
+
+

@@ -1,0 +1,13 @@
+<div class="text-center text-5xl">Vous avez <span class="text-green-500"><%=@notifications_valid.count%> </span>nouvelles notifications</div>
+<div class="text-center text-5xl">Vous avez <span class="text-indigo-300"><%=@notifications.count%> </span>notifications déjà lu </div>
+
+<%@notifications_valid.each do |notif|%>
+<ul>
+  
+   <li class="text-red-900 text-3xl"><%= link_to 'Marquer comme lu', notif, method: :put %></li>
+
+
+  
+</ul>
+
+<%end%>

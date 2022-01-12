@@ -1,0 +1,115 @@
+<div class="text-5xl bg-indigo-900 text-white">Dashboard de l'admin</div>
+<%=render "notifications/index"%>
+
+   <%@users.each do |user| %>
+    <ul class="flex">
+           <li class="mb-6 text-gray-600 text-center text-3xl font-bold"><%=user.email%></li>
+            <%if user.contentweb %>
+               <li class="bg-green-600 w-32 h-12 border-2"></div>
+            <%else%>
+               <li class="bg-red-600 w-32 h-12 border-2"></div>
+            <%end%>
+             <%if user.googlemodifs.count === 0 %>
+               <li class="bg-red-600 w-32 h-12 border-2"></div>
+            <%else%>
+               <div class="bg-green-600 w-32 h-12 border-2"></div>
+            <%end%>
+             <%if user.facebookmodifs.count === 0  %>
+               <li class="bg-red-600 w-32 h-12 border-2"></div>
+            <%else%>
+               <li class="bg-green-600 w-32 h-12 border-2"></div>
+            <%end%>
+            
+   </ul>
+    <%end%>
+     
+
+
+<% @users.each do |user|%>
+  <ul x-data="{ open: false }" class="bg-green-300 w-96 text-center font-semibold text-xl">
+
+  <li @click="open = true" class="cursor-pointer" ><%=user.email%> </li>
+   <button @click ="open=false " class="bg-red-900 text-3xl text-white text-center font-bold cursor-pointer">X</button>
+      <%user.comments.each do |comment|%>
+        <div  x-show="open" class="bg-gray-100 text-lg"  >
+            <div><%=comment.body%></div>
+            <div><%=comment.id%></div>
+            <div><%comment.answers.each do |answer| %>
+                     <div><%=answer.body%></div>
+                   
+                  </div>
+            <%end%>
+            <div class="bg-red-900 w-full h-96">
+            <%=form_with( url: answers_path, method: :post) do |form|%>
+               <%=form.text_area :body, class: "bg-gray-100 text-lg" %>
+               <%= form.hidden_field :comment_id, value: comment.id%>
+               <%= form.hidden_field :user_id , value: 1%>
+               <%=form.submit "Répondre", class: "bg-green-500 text-lg" %>
+            <%end%>
+            </div>
+
+        </div>
+   <%end%>
+  
+  </ul>
+<%end%>
+<div class="bg-red-500 text-5xl"><%=@comments.count%></div>
+<% @comments.each do |comment|%>
+  <ul>
+  <li><%=comment.body%></li>
+  
+  </ul>
+<%end%>
+<div x-data="{ open: false }">
+    <button @click="open = true">Expand</button>
+ 
+    <div x-show="open">
+      Content...
+
+         <button @click ="open=false" class="bg-red-900 text-white font-bold text-3-xl">X </button>
+      </div>
+</div>
+
+
+<div class="px-8 py-4 mt-10 bg-purple-400">
+  <h4>Articles pour les utilisateurs</h4>
+<%= form_with(model: [@user, @word]) do |form| %>
+  <% if word.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(word.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+        <% word.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+    <div>
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+    </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.hidden_field :user_id, :value => 1 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+
+</div>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Tokkens</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th class="bg-indigo-900 text-xl font-bold text-gray-50">Fbtokken</th>
+      <th class="bg-indigo-900 text-xl font-bold text-gray-50">Gtokken</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tokkens.each do |tokken| %>
+      <tr>
+        <td><%= tokken.fbTokken %></td>
+        <td><%= tokken.gTokken %></td>
+        <td><%= link_to 'Show', tokken %></td>
+        <td><%= link_to 'Edit', edit_tokken_path(tokken) %></td>
+        <td><%= link_to 'Destroy', tokken, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tokken', new_tokken_path %>

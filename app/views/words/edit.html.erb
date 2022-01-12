@@ -1,0 +1,6 @@
+<h1>Editing Word</h1>
+
+<%= render 'form', word: @word %>
+
+<%= link_to 'Show', user_words_path(@user) %> |
+<%= link_to 'Back', user_words_path(@user, @word) %>

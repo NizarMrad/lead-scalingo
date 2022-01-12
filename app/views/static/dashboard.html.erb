@@ -1,0 +1,47 @@
+<%# <%= javascript_tag do %>
+  <%# var tokkens = <%= raw(get_facebook.to_json) %>
+<% #end %> 
+
+<div>
+<h3 class="text-center text-green-500 text-2xl font-bold">Rafraichissez la page si le Dashboard n'apparait pas !</h3>
+ <%= javascript_pack_tag 'hello_react' %>
+
+        <!--Navbar-->
+        
+      
+
+
+       <h1>Contentwebs</h1>
+         <%@contentwebs.each do |contentweb|%>
+         <ul>
+         <li><%= contentweb.header%></li>
+
+         
+         </ul>
+         <%end%>
+        <table>
+          <thead>
+            <tr>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+            <% @contentwebs.each do |contentweb| %>
+                <ul>
+                <li class="text-2xl text-green-500 font-bold"><%= link_to 'Voir la prevue', contentweb %></li><br>
+                <li class="text-2xl text-green-500 font-bold"><%= link_to 'Modifier', edit_contentweb_path(contentweb) %></li><br>
+                <li class="text-2xl text-red-500 font-bold"><%= link_to 'Effacez le contenuu', contentweb, method: :delete, data: { confirm: 'Are you sure?' } %></li><br>
+               <li class=""><%= link_to 'Créez Votre de nouvelles pages WEB', contentweb_pages_path(contentweb), class: 'text-5xl font-bold text-green-900' %></li><br>
+              </ul>
+            
+            <% end %>
+          </tbody>
+        </table>
+        
+        <br>
+        <%if current_user.contentweb.nil?%>
+            <%= link_to 'Créez Votre première page WEB', new_contentweb_path, class: 'text-5xl font-bold text-green-900' %>
+        
+        <%end%>       
+</div>

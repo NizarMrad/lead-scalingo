@@ -1,0 +1,32 @@
+<%= form_with(model: tokken) do |form| %>
+  <% if tokken.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tokken.errors.count, "error") %> prohibited this tokken from being saved:</h2>
+
+      <ul>
+        <% tokken.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :fbTokken %>
+    <%= form.text_area :fbTokken %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gTokken %>
+    <%= form.text_area :gTokken %>
+  </div>
+
+    <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,214 @@
+<%= form_with(model:[@contentweb, page]) do |form| %>
+  <% if page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(page.errors.count, "error") %> prohibited this word from being saved:</h2>
+
+      <ul>
+        <% page.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <h3 class="text-4xl w-3/4 font-bold text-center bg-blue-600 text-gray-50"> Remplissez le champ pour vptre page</h3>
+  <div class="field bg-green-500 border-2 w-96">
+    <div class="my-2 text-center font-bold text-gray-50">
+    <%= form.label :nom_de_la_page %>
+    </div>
+    <div class="my-2 mx-2 ">
+    <%= form.text_field :name, placeholder: 'Remplissez avec votre texte'%>
+    </div>
+  </div>
+
+<div class="mx-40 bg-gray-400 px-8 w-1/2 py-4">
+    <h4 class="text-gray-50 text-center text-3xl">C'est un block d'information remplissez avec votre texte</h4>
+      <div class="field bg-green-500 border-2 w-96 my-10">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :grand_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :title1, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+        <div class="field bg-green-200 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :sous_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :subtitle1, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+         <div class="field bg-green-50 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-800">
+                   <%= form.label :votre_contneu %>
+                </div>
+                <div class="my-2 mx-2 border-4 ">
+                      <%= form.text_area :text1, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+  </div>
+ 
+ <!--Partie 2-->
+
+ <div class="mx-40 bg-gray-400 px-8 w-1/2 py-4">
+    <h4 class="text-gray-50 text-center text-3xl">C'est un block d'information remplissez avec votre texte</h4>
+      <div class="field bg-green-500 border-2 w-96 my-10">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :grand_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :title2, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+        <div class="field bg-green-200 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :sous_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :subtitle2, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+         <div class="field bg-green-50 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-800">
+                   <%= form.label :votre_contneu %>
+                </div>
+                <div class="my-2 mx-2 border-4 ">
+                      <%= form.text_area :text2, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+  </div>
+
+  <!--Partie 3-->
+
+  <div class="mx-40 bg-gray-400 px-8 w-1/2 py-4">
+    <h4 class="text-gray-50 text-center text-3xl">C'est un block d'information remplissez avec votre texte</h4>
+      <div class="field bg-green-500 border-2 w-96 my-10">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :grand_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :title3, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+        <div class="field bg-green-200 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :sous_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :subtitle3, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+         <div class="field bg-green-50 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-800">
+                   <%= form.label :votre_contneu %>
+                </div>
+                <div class="my-2 mx-2 border-4 ">
+                      <%= form.text_area :text3, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+  </div>
+
+  <!--Partie 4-->
+  
+
+  <div class="mx-40 bg-gray-400 px-8 w-1/2 py-4">
+    <h4 class="text-gray-50 text-center text-3xl">C'est un block d'information remplissez avec votre texte</h4>
+      <div class="field bg-green-500 border-2 w-96 my-10">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :grand_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :title4, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+        <div class="field bg-green-200 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :sous_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :subtitle4, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+         <div class="field bg-green-50 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-800">
+                   <%= form.label :votre_contneu %>
+                </div>
+                <div class="my-2 mx-2 border-4 ">
+                      <%= form.text_area :text4, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+  </div>
+
+  <!--Partie 5-->
+
+  <div class="mx-40 bg-gray-400 px-8 w-1/2 py-4">
+    <h4 class="text-gray-50 text-center text-3xl">C'est un block d'information remplissez avec votre texte</h4>
+      <div class="field bg-green-500 border-2 w-96 my-10">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :grand_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :title5, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+        <div class="field bg-green-200 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :sous_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :subtitle5, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+         <div class="field bg-green-50 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-800">
+                   <%= form.label :votre_contneu %>
+                </div>
+                <div class="my-2 mx-2 border-4 ">
+                      <%= form.text_area :text5, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+  </div>
+
+  <!--Partie 6-->
+
+  <div class="mx-40 bg-gray-400 px-8 w-1/2 py-4">
+    <h4 class="text-gray-50 text-center text-3xl">C'est un block d'information remplissez avec votre texte</h4>
+      <div class="field bg-green-500 border-2 w-96 my-10">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :grand_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :title6, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+        <div class="field bg-green-200 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-50">
+                        <%= form.label :sous_titre %>
+                </div>
+                <div class="my-2 mx-2 ">
+                      <%= form.text_field :subtitle6, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+         <div class="field bg-green-50 border-2 w-96 my-4">
+                <div class="my-2 text-center font-bold text-gray-800">
+                   <%= form.label :votre_contneu %>
+                </div>
+                <div class="my-2 mx-2 border-4 ">
+                      <%= form.text_area :text6, placeholder: 'Remplissez avec votre texte'%>
+                </div>
+        </div>
+  </div>
+  
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.hidden_field :user_id, :value => current_user.id %>
+  </div>
+   <div class="field">
+    <%= form.label :contentweb_id %>
+    <%= form.hidden_field :contentweb_id, :value => current_user.contentweb.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
